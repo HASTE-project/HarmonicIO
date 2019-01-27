@@ -1,5 +1,9 @@
 # Harmonic IO Streaming Framework
 
+
+[![Build Status](https://travis-ci.org/HASTE-project/HarmonicIO.svg?branch=master)](https://travis-ci.org/HASTE-project/HasteStorageClient)
+
+
 Framework for distributed task execution, key components:
 
 Master Node - maintains queue of tasks, workers, their containers, etc.
@@ -10,6 +14,7 @@ Stream_Connector - client for sending tasks for distributed execution.
 
 Forked from https://github.com/beirbear/HarmonicIO
 
+Python 3.x.
 
 ## Quickstart
 

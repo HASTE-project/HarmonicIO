@@ -1,18 +1,23 @@
-
 language: python
 python:
-- "2.6"
-- "2.7"
-#  - "3.3" -- broken on TravisCI -- "The program 'pytest' is currently not installed. To run 'pytest' please ask your administrator to install the package 'python-logilab-common'"
-- "3.4"
-- "3.5"
-- "3.5-dev"  # 3.5 development branch
-- "3.6"
-- "3.6-dev"  # 3.6 development branch
-- "3.7-dev"  # 3.7 development branch
+
+# HarmonicIO uses Python 3.
+#- '2.6'
+#- '2.7'
+
+- '3.4'
+- '3.5'
+- 3.5-dev
+- '3.6'
+- 3.6-dev
+- 3.7-dev
 install:
 - pip install .
 script:
 - pytest tests
 notifications:
   email: false
+
+deploy:
+  password:
+    secure: E01SSWinMdjfTTKGJTLjJFURGOjHki8Au32OMNXdB5Difx02kWVK7l8BlRlN8GnXfIDE7rnJ965meGJ3ekKT+HzxqhwnoXubp3BWJTSh4e5aYcow2t6VDMpjnZMPjRYo+3Swn4u/KLE3Rzrp2UXLmvj3FwhMfghA32xlfRXLd0DDxAWw8Te7AoPXXThQ5OFkIaJb1tzOHuKHxaQy+zVfAjtGavrL4R39DNxDxK3VyF686XHHX/8J39Kn0aYNuhxRthgmGXgSQq2b+Ybd4u7LbAcrLs/fCX+rula5WkEqFDDEsVt7mH719iNUj+lLe+gp2PHal49P6tbref0KEuNDk4gWIYgnqVGBt9UXUUsK4t8J82/5NhixIaqqSd9CmUPeAyiP8HGgGyy0xxaarNlOZOkGI9IJeBC7mewbWRkQei7x8CCw9j7MXcW7EQueJIqeQ2EPhdBobnpuuguwRJ6fTyl7Shgt5oZNlRb0Vl/+HVsbyFJrLtz65WF4RxtLO60nYN3qnsnE5j+X7+RPjs0jefRILmtIrhL4tGMHc6IN57s/n8sqpXit52/DJAlUa/kHRse3eOO7wYsrSExor93bQa39MXfkaga0ZF1UuDqMQ8nt4cIeijTr703xHio2ZnwRGHZVI6MGqqfGikFJ6lr1192OSSzbH3CURW6gsvepDx4=
