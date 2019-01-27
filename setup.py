@@ -14,5 +14,8 @@ setup(name='harmonicIO',
               'worker = harmonicIO.worker.__main__:main',
               'play = harmonicIO.play.__main__:main'
           ]
-      }
+      },
+      test_requires=[
+          'pytest'
+      ]
       )
