@@ -19,7 +19,7 @@ install:
 - pip install --upgrade pytest
 - pip install .
 script:
-# Some issues with pytest plugins (?), use our own pytest runner:
+# Some issues with pytest (stdout flushing?), use our own pytest runner:
 - python run_tests.py
 notifications:
   email: false

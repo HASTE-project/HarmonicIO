@@ -14,8 +14,6 @@ def test_worker():
     '''
     Assert that the worker starts successfully
     '''
-    # if sys.version_info < (3, 6):
-    #     return
 
     with pytest.raises(subprocess.TimeoutExpired) as ex_info:
         # Start the worker by itself, check that it initializes:

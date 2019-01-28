@@ -73,7 +73,7 @@ https://github.com/HASTE-project/HarmonicPE
 
 ## Tests
 
-Some issues with PyTest, use:
+Some stdout buffering issues with PyTest, use:
 
 ```
 python3 run_tests.py
