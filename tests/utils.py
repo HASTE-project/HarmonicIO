@@ -14,11 +14,14 @@ def run_module(module_name, timeout_seconds=10):
     '''
     print('cwd: ' + os.getcwd())
 
-    result = subprocess.run([sys.executable,
+    result = subprocess.run(['python',
                              '-m',
                              module_name],
-                            capture_output=True,
-                            text=True,
+                            # capture_output=True,
+                            # text=True,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+
                             timeout=timeout_seconds,
                             cwd='test_root')
     return result
