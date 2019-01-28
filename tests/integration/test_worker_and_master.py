@@ -22,7 +22,12 @@ def test_master_and_worker():
     Start the master and  the worker, and assert that a report is sent to the master, and received by it successfully.
     '''
 
-    results = asyncio.run(_inner_test_master_and_worker())
+    loop = asyncio.get_event_loop()
+    # Blocking call which returns when the hello_world() coroutine is done
+    results = loop.run_until_complete(_inner_test_master_and_worker())
+    loop.close()
+
+
     print(results)
 
     master_timeout_expired_ex = results[0].get()
