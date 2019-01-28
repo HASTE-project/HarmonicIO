@@ -16,6 +16,7 @@ python:
 
 install:
 - sudo apt-get install docker
+- pip install --upgrade pytest
 - pip install .
 script:
 # Some issues with pytest plugins (?), use our own pytest runner:
