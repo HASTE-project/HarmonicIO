@@ -5,13 +5,17 @@ python:
 #- '2.6'
 #- '2.7'
 
-- '3.4'
+# The unit tests use 'async' - not available in python3.4
+#- '3.4'
+
 - '3.5'
 - 3.5-dev
 - '3.6'
 - 3.6-dev
 - 3.7-dev
+
 install:
+- sudo apt-get install docker
 - pip install .
 script:
 - pytest tests
