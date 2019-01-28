@@ -1,6 +1,7 @@
 from setuptools import setup
 
 setup(name='harmonicIO',
+      description='Lightweight stream processing engine for scientific data',
       version='0.2.0',
       install_requires=['falcon', 'urllib3>=1.22', 'docker'],
       packages=['harmonicIO',
@@ -17,5 +18,9 @@ setup(name='harmonicIO',
       },
       test_requires=[
           'pytest'
-      ]
+      ],
+      project_urls={
+          'source': 'https://github.com/HASTE-project/HarmonicIO',
+          'homepage': 'http://haste.research.it.uu.se/',
+      },
       )
