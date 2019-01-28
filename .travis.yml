@@ -18,7 +18,8 @@ install:
 - sudo apt-get install docker
 - pip install .
 script:
-- pytest tests
+# Some issues with pytest plugins (?), use our own pytest runner:
+- python run_tests.py
 notifications:
   email: false
 

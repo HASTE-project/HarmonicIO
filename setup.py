@@ -6,6 +6,7 @@ setup(name='harmonicIO',
       install_requires=['falcon', 'urllib3>=1.22', 'docker'],
       packages=['harmonicIO',
                 'harmonicIO.stream_connector',
+                'harmonicIO.general',
                 'harmonicIO.master',
                 'harmonicIO.worker'],
       entry_points={

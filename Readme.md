@@ -24,11 +24,9 @@ Setup with master and worker on a single node:
 * Install Docker
 * Install python3, pip
 
-* Clone and Install:
+* Install (user):
 ```
-$ git clone https://github.com/HASTE-project/HarmonicIO.git
-$ cd HarmonicIO
-$ pip3 install -e .
+$ pip3 install HarmonicIO
 ```
 
 * Edit `harmonicIO/master/configuration.json` and `harmonicIO/worker/configuration.json` so that the addresses are for the local machine (localhost seems problematic).
@@ -73,13 +71,11 @@ message was bytes: 125
 * Create your own processing container running the HarmonicPE processing daemon:
 https://github.com/HASTE-project/HarmonicPE
 
-## Install the Streaming Connector only
+## Tests
 
-* Install python3, pip
+Some issues with PyTest, use:
 
-* Clone and Install:
 ```
-$ git clone https://github.com/HASTE-project/HarmonicIO.git
-$ cd HarmonicIO
-$ pip3 install -e .
+python3 run_tests.py
 ```
+

@@ -6,6 +6,7 @@ import time
 from multiprocessing import Queue, Process
 import subprocess
 
+TIMEOUT = 5
 
 def run_module(module_name, timeout_seconds=10):
     '''
@@ -23,7 +24,7 @@ def run_module(module_name, timeout_seconds=10):
     return result
 
 
-async def run_module_async(module_name, timeout_seconds=10):
+async def run_module_async(module_name, timeout_seconds=TIMEOUT):
     '''
     Run a python3 module in a sub-process, asynchronously.
     '''

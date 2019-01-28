@@ -1,6 +1,6 @@
 import asyncio
 
-from tests.utils import run_module_async
+from tests.utils import run_module_async, TIMEOUT
 
 import sys
 import os
@@ -10,8 +10,8 @@ import os
 
 async def _inner_test_master_and_worker():
     results = await asyncio.gather(
-        run_module_async('harmonicIO.master', 10),
-        run_module_async('harmonicIO.worker', 10)
+        run_module_async('harmonicIO.master', TIMEOUT),
+        run_module_async('harmonicIO.worker', TIMEOUT)
     )
 
     return results
@@ -21,12 +21,6 @@ def test_master_and_worker():
     '''
     Start the master and  the worker, and assert that a report is sent to the master, and received by it successfully.
     '''
-
-    if os.environ['TRAVIS'] == 'true':
-        # This test doesn't work on Travis at all.
-        # TODO: fix
-        return
-
 
     results = asyncio.run(_inner_test_master_and_worker())
     print(results)
@@ -40,8 +34,8 @@ def test_master_and_worker():
     worker_stdout_lines = worker_timeout_expired_ex.stdout.split('\n')
     worker_stderr_lines = worker_timeout_expired_ex.stderr.split('\n')
 
-    # print(master_stdout_lines)
-    # print(master_stderr_lines)
+    print(master_stdout_lines)
+    print(master_stderr_lines)
     # ['[OUT: Running Harmonic Master]',
     #  '[OUT: Load setting successful.]',
     #  '[OUT: Node name: PE Master]',
@@ -58,8 +52,8 @@ def test_master_and_worker():
 
     assert '[DEB: Update worker status (PE Worker)]' in master_stdout_lines
 
-    # print(worker_stdout_lines)
-    # print(worker_stderr_lines)
+    print(worker_stdout_lines)
+    print(worker_stderr_lines)
     # ['[OUT: Running Harmonic Worker]',
     #  '[OUT: Load setting successful.]',
     #  '[OUT: Node name: PE Worker]',
