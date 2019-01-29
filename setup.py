@@ -2,8 +2,10 @@ from setuptools import setup
 
 setup(name='harmonicIO',
       description='Lightweight stream processing engine for scientific data',
-      version='0.2.0',
-      install_requires=['falcon', 'urllib3>=1.22', 'docker'],
+      version='0.3.0',
+      install_requires=['falcon', # Web Framework
+                        'urllib3>=1.22',
+                        'docker'],
       packages=['harmonicIO',
                 'harmonicIO.stream_connector',
                 'harmonicIO.master',
