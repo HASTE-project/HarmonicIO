@@ -16,9 +16,11 @@ python:
 
 install:
 - sudo apt-get install docker
+- pip install --upgrade pytest
 - pip install .
 script:
-- pytest tests
+# Some issues with pytest (stdout flushing?), use our own pytest runner:
+- python run_tests.py
 notifications:
   email: false
 
